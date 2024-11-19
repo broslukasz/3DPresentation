@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "react": [ "./node_modules/@types/react" ]
+    },
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "target": "ES2020"
+  }
+}
