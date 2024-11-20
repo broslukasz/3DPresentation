@@ -4,7 +4,7 @@ import { positionNames } from '../Models/position-names.enum';
 import { Deer } from '../Modals/Deer';
 
 type NotificationContextType = {
-  notification: { type: positionNames; message: string };
+  notification: { type: positionNames };
   setNotification: React.Dispatch<React.SetStateAction<{ type: positionNames }>>;
 };
 
@@ -21,7 +21,7 @@ export const useNotifications = (): NotificationContextType => {
 };
 
 export default function NotificationProvider(props: { children: any }) {
-  const [notification, setNotification] = React.useState({ type: null, message: '' });
+  const [notification, setNotification] = React.useState({ type: null });
 
   return (
     <NotificationContext.Provider value={{ notification, setNotification }}>
