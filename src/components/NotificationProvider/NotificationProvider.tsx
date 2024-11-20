@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Initial } from '../Modals/Initial';
 import { positionNames } from '../Models/position-names.enum';
+import { Deer } from '../Modals/Deer';
 
 type NotificationContextType = {
   notification: { type: positionNames; message: string };
@@ -25,6 +26,7 @@ export default function NotificationProvider(props: { children: any }) {
   return (
     <NotificationContext.Provider value={{ notification, setNotification }}>
       {notification.type === positionNames.initial && <Initial />}
+      {notification.type === positionNames.deer && <Deer />}
       {props.children}
     </NotificationContext.Provider>
   );
