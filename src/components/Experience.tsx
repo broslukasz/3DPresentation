@@ -15,8 +15,8 @@ const [initialLookAtX, initialLookAtY, initialLookAtZ] = [-4.809206677587866, 0.
 const [deerCameraX, deerCameraY, deerCameraZ] = [-4.383905161837065, 0.12716192106786917, 3.831773473573123]
 const [deerLookAtX, deerLookAtY, deerLookAtZ] = [-4.678141748611585, -0.23772542007754494, 2.68213648978029]
 
-const [millCameraX, millCameraY, millCameraZ] = [-7.053663426002194, 0.39226467956214667, 6.745857788574006]
-const [millLookAtX, millLookAtY, millLookAtZ] = [-8.31227151798829, -0.25360347641825687, 5.385789384104497]
+const [millCameraX, millCameraY, millCameraZ] = [-6.471919722434551, 0.9412403259769404, 7.3744976612709054]
+const [millLookAtX, millLookAtY, millLookAtZ] = [-8.31227151798829, 0.15360347641825687, 5.385789384104497]
 
 const [fisherCameraX, fisherCameraY, fisherCameraZ] = [0.6084024994651535, 0.14354541779940824, 5.2651255019934045]
 const [fisherLookAtX, fisherLookAtY, fisherLookAtZ] = [-1.7770771231359181, -0.23832038332389072, 3.723400139741437]
@@ -141,7 +141,7 @@ export const Experience = () => {
   }, []);
 
   useEffect(() => {
-    // console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
+    console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
   }, [cameraPosition]);
 
   useEffect(() => {
