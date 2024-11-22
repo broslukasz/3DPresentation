@@ -9,8 +9,8 @@ import { FarmCloser } from '../Modals/FarmCloser';
 import { CastleEnter } from '../Modals/CastleEnter';
 import { CastleInside } from '../Modals/CastleInside';
 import { CastleWall } from '../Modals/CastleWall';
-import { WorldFromTop } from '../Modals/WorldFromTop';
-import { Hill } from '../Modals/Hill';
+import { WorldFromTop } from './WorldFromTop';
+import { Hill } from './Hill';
 
 type NotificationContextType = {
   notification: { type: positionNames };
@@ -24,8 +24,8 @@ export const useNotifications = (): NotificationContextType => {
 
   if (!context) {
     // Workaround for live editing css
-    // return { notification: { type: positionNames.initial }, setNotification: () => {} };
-    throw new Error('useNotificationContext must be used within a NotificationProvider');
+    return { notification: { type: positionNames.initial }, setNotification: () => {} };
+    // throw new Error('useNotificationContext must be used within a NotificationProvider');
   }
 
   return context;

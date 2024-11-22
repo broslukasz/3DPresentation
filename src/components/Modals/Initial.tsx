@@ -3,8 +3,7 @@ import { Modal } from './modal';
 
 const customStyles: React.CSSProperties = {
   position: 'absolute',
-  top: '5%',
-  left: '5%',
+  inset: '5% auto auto 5%',
   transform: 'translate(0, 0)',
   backgroundColor: 'rgba(255, 255, 255, 0.9)',
   padding: '20px',
@@ -15,6 +14,7 @@ const customStyles: React.CSSProperties = {
   fontFamily: "'Uncial Antiqua', cursive",
   textAlign: 'center',
   width: '25vw'
+  // minHeight: '172px',
 };
 
 export const Initial = () => {

@@ -3,7 +3,7 @@ import { Modal } from './modal';
 
 const customStyles: React.CSSProperties = {
   position: 'absolute',
-  inset: 'auto 300px 20% auto',
+  inset: '2% auto auto 5%',
   transform: 'translate(0, 0)',
   backgroundColor: 'rgba(255, 255, 255, 0.9)',
   padding: '20px',
@@ -17,7 +17,7 @@ const customStyles: React.CSSProperties = {
   minHeight: '172px',
 };
 
-export const Deer = () => {
+export const CastleWall = () => {
   const { setNotification } = useNotifications();
 
   return (
@@ -26,9 +26,11 @@ export const Deer = () => {
     }}
     style={customStyles}
     >
-      <h2 style={{ margin: '0 0 10px 0' }}>Content presentation</h2>
+      <h2 style={{ margin: '0 0 10px 0' }}>Learn 3D in javascript</h2>
       <div style={{ marginTop: '30px'}}>
-        <p style={{ margin: '0 0 20px 0' }}>You can present some content having in the background interesting elements</p>
+        <p style={{ margin: '0 0 20px 0' }}>If you want to lear about Three.js and React Three Fiber find here the best materials:</p>
+        <p style={{ margin: '0 0 20px 0' }}>https://threejs-journey.com/ - The best cours ever</p>
+        <p style={{ margin: '0 0 20px 0' }}>https://www.youtube.com/c/wawasensei - Instructing movies for different application types or effects (know-how)</p>
       </div>
     </Modal>
   );

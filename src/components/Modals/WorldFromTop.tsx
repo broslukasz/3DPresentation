@@ -3,7 +3,7 @@ import { Modal } from './modal';
 
 const customStyles: React.CSSProperties = {
   position: 'absolute',
-  inset: 'auto 300px 20% auto',
+  inset: '5% auto auto 5%',
   transform: 'translate(0, 0)',
   backgroundColor: 'rgba(255, 255, 255, 0.9)',
   padding: '20px',
@@ -17,7 +17,7 @@ const customStyles: React.CSSProperties = {
   minHeight: '172px',
 };
 
-export const Deer = () => {
+export const WorldFromTop = () => {
   const { setNotification } = useNotifications();
 
   return (
@@ -26,9 +26,14 @@ export const Deer = () => {
     }}
     style={customStyles}
     >
-      <h2 style={{ margin: '0 0 10px 0' }}>Content presentation</h2>
+      <h2 style={{ margin: '0 0 10px 0' }}>Thank you for your attention :)</h2>
       <div style={{ marginTop: '30px'}}>
-        <p style={{ margin: '0 0 20px 0' }}>You can present some content having in the background interesting elements</p>
+        <p style={{ margin: '0 0 20px 0' }}> 
+          Model - https://sketchfab.com/3d-models/medieval-fantasy-book-06d5a80a04fc4c5ab552759e9a97d91a
+        </p>
+        <p style={{ margin: '0 0 20px 0' }}> 
+          https://creativecommons.org/licenses/by/4.0/#ref-appropriate-credit
+        </p>
       </div>
     </Modal>
   );

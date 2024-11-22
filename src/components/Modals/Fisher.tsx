@@ -3,7 +3,7 @@ import { Modal } from './modal';
 
 const customStyles: React.CSSProperties = {
   position: 'absolute',
-  inset: 'auto 300px 20% auto',
+  inset: 'auto 25% 5% auto',
   transform: 'translate(0, 0)',
   backgroundColor: 'rgba(255, 255, 255, 0.9)',
   padding: '20px',
@@ -17,7 +17,7 @@ const customStyles: React.CSSProperties = {
   minHeight: '172px',
 };
 
-export const Deer = () => {
+export const Fisher = () => {
   const { setNotification } = useNotifications();
 
   return (
@@ -26,9 +26,9 @@ export const Deer = () => {
     }}
     style={customStyles}
     >
-      <h2 style={{ margin: '0 0 10px 0' }}>Content presentation</h2>
+      <h2 style={{ margin: '0 0 10px 0' }}>Camera movments</h2>
       <div style={{ marginTop: '30px'}}>
-        <p style={{ margin: '0 0 20px 0' }}>You can present some content having in the background interesting elements</p>
+        <p style={{ margin: '0 0 20px 0' }}>Moving the camera is very simple. It is only about setting coordinates in 3d space and drei library do the rest :).</p>
       </div>
     </Modal>
   );

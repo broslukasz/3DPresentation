@@ -24,6 +24,9 @@ const [fisherLookAtX, fisherLookAtY, fisherLookAtZ] = [-1.7770771231359181, -0.2
 const [farmCameraX, farmCameraY, farmCameraZ] = [3.7742188207727216, 0.32299786689614113, 5.056047090193775]
 const [farmLookAtX, farmLookAtY, farmLookAtZ] = [4.7721708311681805, -0.5953308878489825, 2.16098973357599]
 
+const hillPosition = new Vector3(9.439905490889068, -0.16140513396599426, 5.319569542847848)
+const hillLookAt = new Vector3(4.267006552194127, -0.48078836318392826, 2.7587032706926546)
+
 const farmCloserPosition = new Vector3(5.151721612721356, 0.0747318258301197, 0.6401886224897968)
 const farmCloserLookAt = new Vector3(4.070376328020293, -0.14401533300541347, -3.324021392678085)
 
@@ -99,6 +102,9 @@ export const Experience = () => {
       case positionNames.farm:
         cameraControlsRef.current.setLookAt(farmCameraX, farmCameraY, farmCameraZ, farmLookAtX, farmLookAtY, farmLookAtZ, hasCameraTransition);
         break;
+      case positionNames.hill:
+        cameraControlsRef.current.setLookAt(hillPosition.x, hillPosition.y, hillPosition.z, hillLookAt.x, hillLookAt.y, hillLookAt.z, hasCameraTransition);
+        break;
       case positionNames.farmCloser:
         cameraControlsRef.current.setLookAt(farmCloserPosition.x, farmCloserPosition.y, farmCloserPosition.z, farmCloserLookAt.x, farmCloserLookAt.y, farmCloserLookAt.z, hasCameraTransition);
         break;
@@ -142,7 +148,7 @@ export const Experience = () => {
   }, []);
 
   useEffect(() => {
-    // console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
+    console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
   }, [cameraPosition]);
 
   useEffect(() => {
@@ -152,7 +158,7 @@ export const Experience = () => {
   useEffect(() => {
     // Initial look at
     setHasCameraTransition(false);
-    setSlideNumber(positionNames.deer);
+    setSlideNumber(positionNames.initial);
     setTimeout(() => {
       // TODO: Figure out a better way to handle going back to camera transition true
       setHasCameraTransition(true);
