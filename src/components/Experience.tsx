@@ -44,6 +44,7 @@ export const Experience = () => {
   const [cameraPosition, setCameraPosition] = useState(new Vector3());
   const [lookAtPosition, setLookAtPosition] = useState(new Vector3());
   const [slideNumber, setSlideNumber] = useState(null);
+  const [hasCameraTransition, setHasCameraTransition] = useState(true);
   const { setNotification } = useNotifications();
 
   const { performanceVisible } = useControls({ 
@@ -84,37 +85,37 @@ export const Experience = () => {
 
     switch (slideNumber) {
       case positionNames.initial:
-        cameraControlsRef.current.setLookAt(initialCameraX, initialCameraY, initialCameraZ, initialLookAtX, initialLookAtY, initialLookAtZ, true);
+        cameraControlsRef.current.setLookAt(initialCameraX, initialCameraY, initialCameraZ, initialLookAtX, initialLookAtY, initialLookAtZ, hasCameraTransition);
         break;
       case positionNames.deer:
-        cameraControlsRef.current.setLookAt(deerCameraX, deerCameraY, deerCameraZ, deerLookAtX, deerLookAtY, deerLookAtZ, true);
+        cameraControlsRef.current.setLookAt(deerCameraX, deerCameraY, deerCameraZ, deerLookAtX, deerLookAtY, deerLookAtZ, hasCameraTransition);
         break;
       case positionNames.mill:
-        cameraControlsRef.current.setLookAt(millCameraX, millCameraY, millCameraZ, millLookAtX, millLookAtY, millLookAtZ, true);
+        cameraControlsRef.current.setLookAt(millCameraX, millCameraY, millCameraZ, millLookAtX, millLookAtY, millLookAtZ, hasCameraTransition);
         break;
       case positionNames.fisher:
-        cameraControlsRef.current.setLookAt(fisherCameraX, fisherCameraY, fisherCameraZ, fisherLookAtX, fisherLookAtY, fisherLookAtZ, true);
+        cameraControlsRef.current.setLookAt(fisherCameraX, fisherCameraY, fisherCameraZ, fisherLookAtX, fisherLookAtY, fisherLookAtZ, hasCameraTransition);
         break;
       case positionNames.farm:
-        cameraControlsRef.current.setLookAt(farmCameraX, farmCameraY, farmCameraZ, farmLookAtX, farmLookAtY, farmLookAtZ, true);
+        cameraControlsRef.current.setLookAt(farmCameraX, farmCameraY, farmCameraZ, farmLookAtX, farmLookAtY, farmLookAtZ, hasCameraTransition);
         break;
       case positionNames.farmCloser:
-        cameraControlsRef.current.setLookAt(farmCloserPosition.x, farmCloserPosition.y, farmCloserPosition.z, farmCloserLookAt.x, farmCloserLookAt.y, farmCloserLookAt.z, true);
+        cameraControlsRef.current.setLookAt(farmCloserPosition.x, farmCloserPosition.y, farmCloserPosition.z, farmCloserLookAt.x, farmCloserLookAt.y, farmCloserLookAt.z, hasCameraTransition);
         break;
       case positionNames.CastleEnter:
-        cameraControlsRef.current.setLookAt(CastleEnterPosition.x, CastleEnterPosition.y, CastleEnterPosition.z, CastleEnterLookAt.x, CastleEnterLookAt.y, CastleEnterLookAt.z, true);
+        cameraControlsRef.current.setLookAt(CastleEnterPosition.x, CastleEnterPosition.y, CastleEnterPosition.z, CastleEnterLookAt.x, CastleEnterLookAt.y, CastleEnterLookAt.z, hasCameraTransition);
         break;
       case positionNames.CastleInside:
-        cameraControlsRef.current.setLookAt(CastleInsidePosition.x, CastleInsidePosition.y + 5, CastleInsidePosition.z, CastleInsideLookAt.x, CastleInsideLookAt.y, CastleInsideLookAt.z, true);
+        cameraControlsRef.current.setLookAt(CastleInsidePosition.x, CastleInsidePosition.y + 5, CastleInsidePosition.z, CastleInsideLookAt.x, CastleInsideLookAt.y, CastleInsideLookAt.z, hasCameraTransition);
         setTimeout(() => {
-          cameraControlsRef.current.setLookAt(CastleInsidePosition.x, CastleInsidePosition.y, CastleInsidePosition.z, CastleInsideLookAt.x, CastleInsideLookAt.y, CastleInsideLookAt.z, true);
+          cameraControlsRef.current.setLookAt(CastleInsidePosition.x, CastleInsidePosition.y, CastleInsidePosition.z, CastleInsideLookAt.x, CastleInsideLookAt.y, CastleInsideLookAt.z, hasCameraTransition);
         }, 400);
         break;
       case positionNames.CastleWall:
-        cameraControlsRef.current.setLookAt(CastleWallPosition.x, CastleWallPosition.y, CastleWallPosition.z, CastleWallLookAt.x, CastleWallLookAt.y, CastleWallLookAt.z, true);
+        cameraControlsRef.current.setLookAt(CastleWallPosition.x, CastleWallPosition.y, CastleWallPosition.z, CastleWallLookAt.x, CastleWallLookAt.y, CastleWallLookAt.z, hasCameraTransition);
         break;
       case positionNames.WorldFromTop:
-        cameraControlsRef.current.setLookAt(WorldFromTopPosition.x, WorldFromTopPosition.y, WorldFromTopPosition.z, WorldFromTopLookAt.x, WorldFromTopLookAt.y, WorldFromTopLookAt.z, true);
+        cameraControlsRef.current.setLookAt(WorldFromTopPosition.x, WorldFromTopPosition.y, WorldFromTopPosition.z, WorldFromTopLookAt.x, WorldFromTopLookAt.y, WorldFromTopLookAt.z, hasCameraTransition);
         break;
       default:
         break;
@@ -141,7 +142,7 @@ export const Experience = () => {
   }, []);
 
   useEffect(() => {
-    console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
+    // console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
   }, [cameraPosition]);
 
   useEffect(() => {
@@ -150,7 +151,13 @@ export const Experience = () => {
 
   useEffect(() => {
     // Initial look at
-    cameraControlsRef.current.setLookAt(initialCameraX, initialCameraY, initialCameraZ, initialLookAtX, initialLookAtY, initialLookAtZ);
+    setHasCameraTransition(false);
+    setSlideNumber(positionNames.mill);
+    setTimeout(() => {
+      // TODO: Figure out a better way to handle going back to camera transition true
+      setHasCameraTransition(true);
+    }, 0);
+
     setNotification({ type: positionNames.initial });
   }, []);
 
