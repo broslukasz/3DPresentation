@@ -152,13 +152,11 @@ export const Experience = () => {
   useEffect(() => {
     // Initial look at
     setHasCameraTransition(false);
-    setSlideNumber(positionNames.mill);
+    setSlideNumber(positionNames.deer);
     setTimeout(() => {
       // TODO: Figure out a better way to handle going back to camera transition true
       setHasCameraTransition(true);
     }, 0);
-
-    setNotification({ type: positionNames.initial });
   }, []);
 
   
