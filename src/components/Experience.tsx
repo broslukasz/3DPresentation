@@ -70,16 +70,7 @@ export const Experience = () => {
 
   useFrame(() => {
     if (cameraControlsRef.current) {
-      const camera = cameraControlsRef.current.camera;
-      const { x, y, z } = camera.position;
-      if (x !== cameraPosition.x || y !== cameraPosition.y || z !== cameraPosition.z) {
-        setCameraPosition(new Vector3(x, y, z));
-      }
-
-      const direction = new Vector3();
-      camera.getWorldDirection(direction);
-      const lookAtPos = new Vector3().copy(camera.position).add(direction.multiplyScalar(10)); // Adjust scalar as needed
-      setLookAtPosition(lookAtPos);
+      storeCameraPositionAndLookAt(cameraControlsRef, cameraPosition, setCameraPosition, setLookAtPosition);
     }
   });
 
@@ -126,7 +117,6 @@ export const Experience = () => {
       default:
         break;
       }
-// 
   }, [slideNumber]);
 
   useEffect(() => {
@@ -148,7 +138,7 @@ export const Experience = () => {
   }, []);
 
   useEffect(() => {
-    console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
+    // console.log('Camera position changed:', [cameraPosition.x, cameraPosition.y, cameraPosition.z]);
   }, [cameraPosition]);
 
   useEffect(() => {
@@ -185,3 +175,17 @@ export const Experience = () => {
     </>
   );
 };
+
+function storeCameraPositionAndLookAt(cameraControlsRef, cameraPosition: Vector3, setCameraPosition, setLookAtPosition) {
+  const camera = cameraControlsRef.current.camera;
+  const { x, y, z } = camera.position;
+  if (x !== cameraPosition.x || y !== cameraPosition.y || z !== cameraPosition.z) {
+    setCameraPosition(new Vector3(x, y, z));
+  }
+
+  const direction = new Vector3();
+  camera.getWorldDirection(direction);
+  const lookAtPos = new Vector3().copy(camera.position).add(direction.multiplyScalar(10)); // Adjust scalar as needed
+  setLookAtPosition(lookAtPos);
+}
+
