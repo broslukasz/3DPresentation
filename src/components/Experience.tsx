@@ -2,11 +2,11 @@ import { CameraControls } from "@react-three/drei";
 
 import { useControls } from "leva";
 import { Perf } from "r3f-perf";
-import Book from "./Book/room";
+import Model from "./SceneModels/model";
 import { useEffect, useRef, useState } from "react";
 import { Vector3 } from "three";
 import { useFrame } from "@react-three/fiber";
-import { positionNames } from "./Models/position-names.enum";
+import { positionNames } from "./TypescriptModels/position-names.enum";
 import { useNotifications } from "./NotificationProvider/NotificationProvider";
 
 const [initialCameraX, initialCameraY, initialCameraZ] = [-0.2706712005791201, 0.1327423701533647, -1.2675163596371863]
@@ -165,7 +165,7 @@ export const Experience = () => {
       <ambientLight position={[0, 4.5, 0]} intensity={0.5}></ambientLight>
       <pointLight position={[0, 4.5, 0]} intensity={1.1}></pointLight>
       
-      <Book
+      <Model
         onDoubleClick={onRoomDoubleClick}
         onClick={onModelClick}
       />

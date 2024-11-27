@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Initial } from '../Modals/Initial';
-import { positionNames } from '../Models/position-names.enum';
-import { Deer } from '../Modals/Deer';
-import { Mill } from '../Modals/Mill';
-import { Fisher } from '../Modals/Fisher';
-import { Farm } from '../Modals/Farm';
-import { FarmCloser } from '../Modals/FarmCloser';
-import { CastleEnter } from '../Modals/CastleEnter';
-import { CastleInside } from '../Modals/CastleInside';
-import { CastleWall } from '../Modals/CastleWall';
-import { WorldFromTop } from '../Modals/WorldFromTop';
-import { Hill } from '../Modals/Hill';
+import { Initial } from '../Dialogs/Initial';
+import { positionNames } from '../TypescriptModels/position-names.enum';
+import { Deer } from '../Dialogs/Deer';
+import { Mill } from '../Dialogs/Mill';
+import { Fisher } from '../Dialogs/Fisher';
+import { Farm } from '../Dialogs/Farm';
+import { FarmCloser } from '../Dialogs/FarmCloser';
+import { CastleEnter } from '../Dialogs/CastleEnter';
+import { CastleInside } from '../Dialogs/CastleInside';
+import { CastleWall } from '../Dialogs/CastleWall';
+import { WorldFromTop } from '../Dialogs/WorldFromTop';
+import { Hill } from '../Dialogs/Hill';
 
 type NotificationContextType = {
   notification: { type: positionNames };

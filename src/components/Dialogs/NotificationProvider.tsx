@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Initial } from '../Modals/Initial';
-import { positionNames } from '../Models/position-names.enum';
-import { Deer } from '../Modals/Deer';
-import { Mill } from '../Modals/Mill';
-import { Fisher } from '../Modals/Fisher';
-import { Farm } from '../Modals/Farm';
-import { FarmCloser } from '../Modals/FarmCloser';
-import { CastleEnter } from '../Modals/CastleEnter';
-import { CastleInside } from '../Modals/CastleInside';
-import { CastleWall } from '../Modals/CastleWall';
+import { Initial } from './Initial';
+import { positionNames } from '../TypescriptModels/position-names.enum';
+import { Deer } from './Deer';
+import { Mill } from './Mill';
+import { Fisher } from './Fisher';
+import { Farm } from './Farm';
+import { FarmCloser } from './FarmCloser';
+import { CastleEnter } from './CastleEnter';
+import { CastleInside } from './CastleInside';
+import { CastleWall } from './CastleWall';
 import { WorldFromTop } from './WorldFromTop';
 import { Hill } from './Hill';
 
