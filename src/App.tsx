@@ -1,8 +1,8 @@
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Leva } from "leva";
 import { Html, useProgress } from "@react-three/drei";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import NotificationProvider from "./components/NotificationProvider/NotificationProvider";
 
 function Loader() {
@@ -10,16 +10,7 @@ function Loader() {
   return <Html center>{progress} % loaded</Html>
 }
 
-function App() {
-  const [showModal, setShowModal] = useState(false);
-  const { progress } = useProgress();
-
-  useEffect(() => {
-    if (progress === 100) {
-      setShowModal(true);
-    }
-  }, [progress]);
-  
+function App() {  
   return (
     <>
       <Leva collapsed />
