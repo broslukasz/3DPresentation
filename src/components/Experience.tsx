@@ -120,7 +120,6 @@ export const Experience = () => {
   }, [slideNumber]);
 
   useEffect(() => {
-    
     const handleKeyDown = (event) => {
       const positionEnumLength = Object.keys(positionNames).filter(key => isNaN(Number(key))).length;
       if (event.key === 'ArrowLeft') {
