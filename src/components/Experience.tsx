@@ -54,7 +54,7 @@ export const Experience = () => {
     performanceVisible: false,
   });
 
-  const onRoomClick = ($event: any) => {
+  const onModelClick = ($event: any) => {
     $event.stopPropagation();
     const {x, y, z} = $event.point
     console.log('Model clicked:', [x, y, z]);
@@ -178,7 +178,7 @@ export const Experience = () => {
       
       <Book
         onDoubleClick={onRoomDoubleClick}
-        onClick={onRoomClick}
+        onClick={onModelClick}
       />
 
       <axesHelper position={[0, 3, 0]} args={[5]} />
