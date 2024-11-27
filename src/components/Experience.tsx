@@ -145,7 +145,7 @@ export const Experience = () => {
   }, [lookAtPosition]);
 
   useEffect(() => {
-    // Initial look at
+    // Initial look at, Tip: Change it to live edit CSS / HTML
     setHasCameraTransition(false);
     setSlideNumber(positionNames.initial);
     setTimeout(() => {
