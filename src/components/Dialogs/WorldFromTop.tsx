@@ -28,11 +28,14 @@ export const WorldFromTop = () => {
     >
       <h2 style={{ margin: '0 0 10px 0' }}>Thank you for your attention :)</h2>
       <div style={{ marginTop: '30px'}}>
-        <p style={{ margin: '0 0 20px 0' }}> 
-          Model - https://sketchfab.com/3d-models/medieval-fantasy-book-06d5a80a04fc4c5ab552759e9a97d91a
+        <p>Models:</p>
+        <p>
+          <a href="https://sketchfab.com/3d-models/medieval-fantasy-book-06d5a80a04fc4c5ab552759e9a97d91a">Medival Book</a>
+          <span> (Pixel)</span>
         </p>
-        <p style={{ margin: '0 0 20px 0' }}> 
-          https://creativecommons.org/licenses/by/4.0/#ref-appropriate-credit
+        <p>
+          <a href="https://sketchfab.com/3d-models/pine-tree-e52769d653cd4e52a4acff3041961e65">Pine Tree</a>
+          <span> (Andriy Shekh)</span>
         </p>
       </div>
     </Modal>
