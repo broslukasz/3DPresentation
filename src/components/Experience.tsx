@@ -148,12 +148,10 @@ export const Experience = () => {
     setHasCameraTransition(false);
 
     // Initial look at
-    // Workaround for live editing CSS / HTML
     // Tip: Change it to the view you need to start with
     setSlideNumber(positionNames.initial);
     setTimeout(() => {
       // TODO: Figure out a better way to handle going back to camera transition true
-      // Workaround for live editing CSS / HTML
       // Tip: Change it to false to disable camera transitions
       setHasCameraTransition(true);
     }, 0);

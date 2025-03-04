@@ -23,9 +23,7 @@ export const useNotifications = (): NotificationContextType => {
   const context = React.useContext<NotificationContextType | undefined>(NotificationContext);
 
   if (!context) {
-    // Workaround for live editing css
-    return { notification: { type: positionNames.initial }, setNotification: () => {} };
-    // throw new Error('useNotificationContext must be used within a NotificationProvider');
+    throw new Error('useNotificationContext must be used within a NotificationProvider');
   }
 
   return context;
